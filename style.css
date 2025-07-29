@@ -23,6 +23,12 @@ body {
   text-align: center;
 }
 
+.logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -46,11 +52,11 @@ input {
 }
 
 input:focus {
-  border-color: #3b82f6;
+  border-color: #C90000;
 }
 
 button {
-  background-color: #3b82f6;
+  background-color: #C90000;
   color: #ffffff;
   font-weight: 600;
   padding: 12px 24px;
@@ -62,7 +68,7 @@ button {
 }
 
 button:hover {
-  background-color: #2563eb;
+  background-color: #9e0000;
 }
 
 .output {
@@ -79,4 +85,15 @@ button:hover {
 
 .output a:hover {
   text-decoration: underline;
+}
+
+#copyBtn {
+  display: none;
+  margin-top: 15px;
+}
+
+#copyStatus {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: green;
 }
