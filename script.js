@@ -15,10 +15,10 @@ function generateLink() {
     }
 
     if (videoId) {
-      const smartLink = `${window.location.origin}/open.html?v=${videoId}`;
+      const redirectLink = `${window.location.origin}/open.html?v=${videoId}`;
       output.innerHTML = `
         ✅ <strong>Smart Link:</strong><br>
-        <a href="${smartLink}" target="_blank" id="generatedLink">${smartLink}</a>
+        <a href="${redirectLink}" target="_blank" id="generatedLink">${redirectLink}</a>
       `;
       copyBtn.style.display = 'inline-block';
       copyStatus.innerText = '';
@@ -45,6 +45,6 @@ function copyLink() {
   navigator.clipboard.writeText(linkText).then(() => {
     copyStatus.innerText = '✅ Link copied to clipboard!';
   }).catch(() => {
-    copyStatus.innerText = '❌ Failed to copy.';
+    copyStatus.innerText = '❌ Failed to copy link.';
   });
 }
