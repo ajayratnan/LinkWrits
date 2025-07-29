@@ -13,8 +13,11 @@ function generateLink() {
     }
 
     if (videoId) {
-      const appLink = `vnd.youtube://${videoId}`;
-      output.innerHTML = `✅ <strong>App Link:</strong> <a href="${appLink}">${appLink}</a>`;
+      const redirectLink = `${window.location.origin}/open.html?v=${videoId}`;
+      output.innerHTML = `
+        ✅ <strong>Smart Link:</strong><br>
+        <a href="${redirectLink}" target="_blank">${redirectLink}</a>
+      `;
     } else {
       output.innerHTML = `❌ Could not extract video ID from this URL.`;
     }
