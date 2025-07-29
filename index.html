@@ -4,21 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LinkWRITS - Smart YouTube App Link Generator</title>
+
+  <!-- Branding & Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#C90000" />
+
+  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js").catch(err =>
+          console.error("Service Worker registration failed:", err)
+        );
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="container">
+    <img src="https://writs.in/wp/wp-content/uploads/2023/10/Black-Letters.png" alt="LinkWRITS Logo" class="logo" />
     <h1>LinkWRITS</h1>
     <p class="description">Convert YouTube URLs into smart app-opening links</p>
+
     <input type="text" id="inputURL" placeholder="Paste YouTube video link here..." />
     <button onclick="generateLink()">Generate App Link</button>
+
     <div class="output" id="output"></div>
-    <button id="copyBtn" onclick="copyLink()" style="display:none; margin-top: 10px;">📋 Copy Link</button>
-    <p id="copyStatus" style="margin-top: 10px; color: green;"></p>
+    <button id="copyBtn" onclick="copyLink()">📋 Copy Link</button>
+    <p id="copyStatus"></p>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
